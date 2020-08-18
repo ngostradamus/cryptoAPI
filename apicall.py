@@ -21,6 +21,8 @@ try:
   response = session.get(url, params=parameters)
   data = json.loads(response.text)
   print(data)
+  parseData = json.dumps(response.json())
+  print(parseData)
 except (ConnectionError, Timeout, TooManyRedirects) as e:
   print(e)
   
